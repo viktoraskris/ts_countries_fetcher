@@ -1,8 +1,11 @@
+import { Route, Routes } from 'react-router-dom';
+import Countries from './components/Countries';
+
 function App() {
   return (
-    <div>
-      <h1>Default TS project</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Countries />} />
+    </Routes>
   );
 }
 
