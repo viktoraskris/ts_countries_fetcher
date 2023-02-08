@@ -8,6 +8,16 @@ interface Response {
   region: string,
 }
 
+function isAbortError(error: unknown): error is DOMException {
+  let name = 'Unknown Name';
+  if (error instanceof Error) name = error.name;
+
+  if (error && name === 'AbortError') {
+    return true;
+  }
+  return false;
+}
+
 const useFetch = (url: string) => {
   const [response, setResponse] = useState<Response[]>([]);
   const [error, setError] = useState<string | null | undefined>();
@@ -48,12 +58,5 @@ const useFetch = (url: string) => {
 
   return { response, error, isLoading };
 };
-
-function isAbortError(error: any): error is DOMException {
-  if (error && error.name === 'AbortError') {
-    return true;
-  }
-  return false;
-}
 
 export default useFetch;
