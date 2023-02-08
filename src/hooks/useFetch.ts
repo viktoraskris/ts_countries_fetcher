@@ -20,7 +20,7 @@ function isAbortError(error: unknown): error is DOMException {
 
 const useFetch = (url: string) => {
   const [response, setResponse] = useState<Response[]>([]);
-  const [error, setError] = useState<string | null | undefined>();
+  const [error, setError] = useState<string | undefined>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
