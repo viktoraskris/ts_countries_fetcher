@@ -8,6 +8,7 @@ interface Response {
 
 const OCEANIA = 'Oceania';
 const LITHUANIA = 'Lithuania';
+const DEFAULT_SORT_VALUE = 'sort-order';
 
 enum FilterTypes {
   BY_REGION = 'FILTER_BY_REGION',
@@ -37,7 +38,7 @@ const handleSortAndFilter = (
 
       setData(getOceaniaRegion);
 
-      sortingOrderSelect.value = 'sort-order';
+      sortingOrderSelect.value = DEFAULT_SORT_VALUE;
       break;
     case FilterTypes.BY_LITHUANIA:
       getLithuaniaArea = data.filter((country) => country.name === LITHUANIA)
@@ -47,7 +48,7 @@ const handleSortAndFilter = (
 
       setData(countriesSmallerThanLithuania);
 
-      sortingOrderSelect.value = 'sort-order';
+      sortingOrderSelect.value = DEFAULT_SORT_VALUE;
       break;
     case SortOrder.DESC:
       descOrder = data.sort((a, b) => b.name.localeCompare(a.name));
@@ -62,7 +63,7 @@ const handleSortAndFilter = (
 
       break;
     default: setData(data);
-      sortingOrderSelect.value = 'sort-order';
+      sortingOrderSelect.value = DEFAULT_SORT_VALUE;
   }
 };
 
