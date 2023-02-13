@@ -26,10 +26,11 @@ function Countries() {
 
   return (
     <>
-      {countriesData.isLoading && <div>Loading data...</div>}
+      {countriesData.isLoading && (<div>Loading data...</div>)}
 
-      {countriesData.error !== undefined ? <div>{countriesData.error}</div> : ''}
+      {countriesData.error !== undefined && (<div>{countriesData.error}</div>)}
 
+      {!countriesData.isLoading && countriesData.error === undefined && (
       <div>
         <div>
           <form>
@@ -64,6 +65,7 @@ function Countries() {
             />
           ))}
       </div>
+      )}
     </>
   );
 }
