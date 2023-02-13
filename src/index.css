@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  background: linear-gradient(rgba(31, 27, 27, 0.6), rgba(40, 40, 52, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/1/15/Old-world-map.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
